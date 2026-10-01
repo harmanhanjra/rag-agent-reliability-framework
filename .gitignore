@@ -5,4 +5,5 @@ __pycache__/
 reports/*.json
 .streamlit/
 .venv_fast/
+.venv-runtime/
 *.egg-info/

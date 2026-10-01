@@ -30,7 +30,7 @@ The benchmark is fully runnable offline and does not require a paid LLM API key.
 | Failure-mode pass rate | 16.67% | **100.00%** |
 | Cases passed | 8/16 | **16/16** |
 
-The hardened pipeline therefore exceeds the resume target of **95%+ task completion** on the included frozen benchmark.
+The hardened pipeline passes every case on the included frozen benchmark.
 
 > These numbers apply only to the included deterministic fixture suite. They are not claims of universal production accuracy.
 
@@ -122,6 +122,18 @@ rag-agent-reliability-framework/
 ```
 
 ## Quick start
+
+For the verified Windows setup, use Python 3.12 with working SSL support:
+
+```powershell
+py -3.12 -m venv .venv-runtime
+.\.venv-runtime\Scripts\python.exe -m pip install -r requirements.txt -e .
+.\.venv-runtime\Scripts\python.exe -m pytest -q
+powershell -File start.ps1
+```
+
+The launcher prefers `.venv-runtime`, preserving an older `.venv` if present.
+See [current verification](reports/VERIFICATION-2026-10-01.md).
 
 ### 1. Clone
 
